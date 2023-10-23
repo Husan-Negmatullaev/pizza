@@ -1,0 +1,10 @@
+.container {
+	margin: 0 auto;
+	padding: 0 1.071rem;
+	max-width: 73.125rem;
+	box-sizing: content-box;
+}
+
+.container.min {
+	max-width: 73.125rem;
+}
