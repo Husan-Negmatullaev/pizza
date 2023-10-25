@@ -4,5 +4,5 @@
 npx lint-staged
 #npm run format:check
 #npm run lint:ts
-#npm run lint:css
+#npm run lint:scss
 npm run build

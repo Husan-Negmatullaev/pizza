@@ -1,43 +1,18 @@
-import { defineConfig } from 'vite';
-import Unfonts from 'unplugin-fonts/vite';
-import react from '@vitejs/plugin-react';
-import svgr from 'vite-plugin-svgr';
 import path from 'path';
+import { defineConfig } from 'vite';
+import svgr from 'vite-plugin-svgr';
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
-		react(),
-		svgr({
-			include: path.resolve(__dirname, 'src', 'shared', 'icons'), // "**/*.svg?react"
+		react({
+			include: /\.(jsx|tsx)$/,
 		}),
-		Unfonts({
-			custom: {
-				families: [
-					{
-						name: 'DINPro',
-						src: './src/shared/assets/fonts/*.ttf',
-						transform(font) {
-							if (font.basename === 'DINPro-Bold') {
-								font.weight = 700;
-							}
-
-							if (font.basename === 'DINPro-Light') {
-								font.weight = 300;
-							}
-
-							if (font.basename === 'DINPro-Medium') {
-								font.weight = 500;
-							}
-
-							return font;
-						},
-					},
-				],
-				display: 'swap',
-				preload: true,
-				prefetch: false,
-				injectTo: 'head-prepend',
+		svgr({
+			svgrOptions: {
+				icon: '1em',
+				svgo: false,
 			},
 		}),
 	],
@@ -48,5 +23,15 @@ export default defineConfig({
 				replacement: path.resolve(__dirname, 'src'),
 			},
 		],
+	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: `
+					@use "@/app/styles/base/mixins.scss" as *;			
+					@use "@/app/styles/base/variables.scss" as *;			
+				`,
+			},
+		},
 	},
 });

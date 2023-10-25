@@ -1,0 +1,122 @@
+@use 'sass:math';
+
+.header {
+	border-bottom: torem(1) solid $dark-grey-color;
+
+	&__body {
+		display: flex;
+		min-height: torem($header-height);
+	}
+
+	&__contacts {
+		padding: torem(5) torem(15);
+		border-right: torem(1) solid $dark-grey-color;
+	}
+
+	&__content {
+		flex: 1 1 auto;
+	}
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 torem(30) 0 torem(12);
+
+	&__title {
+		font-weight: 300;
+		font-size: torem(14);
+		line-height: math.div(17.5, 14);
+		color: $dark-grey-color;
+
+		&:not(:last-child) {
+			margin-bottom: torem(5);
+		}
+	}
+
+	&__city {
+		line-height: math.div(22, 18);
+	}
+
+	&__link {
+		transition: 0.3s color ease 0s;
+		line-height: math.div(22, 18);
+
+		&:not(:last-child) {
+			margin-right: torem(10);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow-color;
+			}
+		}
+	}
+}
+
+.contacts {
+	&__body {
+		font-weight: 500;
+		text-align: center;
+	}
+
+	&__title {
+		line-height: math.div(22, 18);
+	}
+
+	&__phones {
+		display: flex;
+		line-height: 1;
+		color: $yellow-color;
+		align-items: center;
+		flex-direction: column;
+
+		&:not(:last-child) {
+			margin-bottom: torem(5);
+		}
+
+		> a {
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	&__time {
+		gap: torem(5);
+		align-items: center;
+		display: inline-flex;
+
+		&Icon {
+			flex: 0 0 em(15, 15);
+			fill: $yellow-color;
+			font-size: em(15, 15);
+		}
+
+		&Text {
+			color: $dark-grey-color;
+		}
+	}
+}
+
+.actions {
+	&__search {
+		height: 100%;
+		display: flex;
+		font-size: em(30);
+		align-items: center;
+		padding: 0 torem(40);
+		fill: $dark-grey-color;
+		justify-content: center;
+		transition: 0.3s fill 0s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				fill: $main-color;
+			}
+		}
+	}
+}

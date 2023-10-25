@@ -1,6 +1,6 @@
-import './styles/styles.css';
-import { Container } from '@/shared/ui/Container/Container.tsx';
+import './styles/styles.scss';
+import { Layout } from '@/widgets/Layout';
 
 export function App() {
-	return <Container>Some</Container>;
+	return <Layout />;
 }

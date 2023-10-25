@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { PropsWithChildren, ReactElement } from 'react';
-import { ClassNameType } from '@/shared/types/common-types.ts';
-import classes from './Container.module.css';
+import { ClassNameType } from '@/shared/types/common-types';
+import classes from './Container.module.scss';
 
 interface ContainerProps extends PropsWithChildren<ClassNameType> {
 	min?: boolean;

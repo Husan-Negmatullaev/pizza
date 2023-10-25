@@ -1,0 +1,21 @@
+$main-color: #000; // Цвет шрифта по умолчанию
+$white-color: #fff;
+$grey-color: #f2f2f2;
+$dark-grey-color: #a4acad;
+$yellow-color: #ff9846;
+$orange-color: #f46d40;
+$red-color: #eb5757;
+
+// Размеры
+$header-height: 95;
+$min-width: 320;
+$max-width: 1920; // Ширина полотна (макета)
+$max-width-container: 1170; // Ширина ограничивающего контейнера (0 = нет ограничения)
+$container-padding: 30; // Общий отступ у контейнера (по 15 px)
+
+$container-width: $max-width-container + $container-padding; // Ширина срабатывания первого брейкпоинта
+
+$pc: em($container-width);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobile-small: em(479.98);

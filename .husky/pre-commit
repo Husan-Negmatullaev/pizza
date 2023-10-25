@@ -3,5 +3,5 @@
 
 npx lint-staged
 npm run format:check
-npm run lint:ts
-npm run lint:css
+npm run lint:ts:fix
+npm run lint:scss:fix

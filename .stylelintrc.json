@@ -1,6 +1,7 @@
 {
-	"extends": "stylelint-config-standard",
+	"extends": "stylelint-config-standard-scss",
 	"rules": {
-		"unit-allowed-list": ["em", "rem", "%"]
+		"unit-allowed-list": ["em", "rem", "%", "vw", "s", "fr"],
+		"scss/operator-no-newline-after": null
 	}
 }

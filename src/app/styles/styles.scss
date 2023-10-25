@@ -1,0 +1,13 @@
+@import 'base/fonts';
+
+$font-family: 'DIN Pro';
+$font-size: torem(18); // где 14(px) - размер шрифта по умолчанию из макета
+
+@import 'base/null';
+
+body {
+	.lock & {
+		overflow: hidden;
+		touch-action: none;
+	}
+}
